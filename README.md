@@ -27,7 +27,8 @@ Feel free to contribute.
 ## Demo
 
 Gif: 
-![Gif](VId.gif)
+![Vid](Vid.gif)
+
 
 Itch.io:
 https://happysimon.itch.io/dossy-bird
