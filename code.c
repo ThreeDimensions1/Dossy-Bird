@@ -141,7 +141,12 @@ void computeCollisions(int posX) {
 
 void gameOver() {
     printf("\033[H");
-    drawBRect(0, 0, 320, 200, 25);
+    drawBRect(0, 0, 320, 200, 112);
+
+    drawBRect(55, 90, 25, 25, 4);
+    drawBRect(65, 95, 5, 5, 0);
+    drawBRect(80, 98, 10, 7, 41);
+
     drawFrameToScreen();
     printf("Game over!\n");
     printf("Your score: ");
@@ -164,7 +169,14 @@ void gameOver() {
 
 void infoScreen() {
     printf("\033[H");
-    drawBRect(0, 0, 320, 200, 3);
+    drawBRect(0, 0, 320, 200, 47);
+
+    drawBRect(25, 110, 25, 25, 14);
+    drawBRect(35, 115, 5, 5, 0);
+    drawBRect(50, 118, 10, 7, 41);
+
+    drawImage(logo, 58, 47, 200, 100, 1, 17);
+
     drawFrameToScreen();
     printf("Info:\n");
     printf("\n");
@@ -176,6 +188,7 @@ void infoScreen() {
     printf("Controls:\n");
     printf("E - quit to main menu\n");
     printf("F - Jump\n");
+
     while (1) {
         key = getch();
         if (key == 'Q' || key == 'q') {
@@ -243,10 +256,22 @@ void game() {
         if (gravity > 0) {
             drawBRect(posX, velocity, 25, gravity + 1, 53);
             drawBRect(posX, velocity + 25, 25, gravity + 1, 45);
+
+            drawBRect(posX + 25, velocity + 4, 10, gravity + 1, 53);
+            drawBRect(posX + 25, velocity + 13, 10, gravity + 1, 41);
+
+            drawBRect(posX + 10, velocity + 5, 5, gravity + 1, 45);
+            drawBRect(posX + 10, velocity + 10, 5, gravity + 1, 0);
         }
         if (gravity < 0) {
             drawBRect(posX, velocity, 25, -gravity + 1, 45);
             drawBRect(posX, velocity + 25, 25, -gravity + 1, 53);
+
+            drawBRect(posX + 25, velocity + 5, 10, -gravity + 1, 41);
+            drawBRect(posX + 25, velocity + 12, 10, -gravity + 1, 53);
+
+            drawBRect(posX + 10, velocity + 5, 5, -gravity + 1, 0);
+            drawBRect(posX + 10, velocity + 10, 5, -gravity + 1, 45);
         }
         pipeX1 -= 5;
         if (pipeX1 < -60) {
@@ -262,8 +287,8 @@ void game() {
         printf(number);
         ntime = getTicks();
         dt = ntime - ltime;
-        if (40 - dt > 0) {
-            customDelay(40 - dt);
+        if (50 - dt > 0) {
+            customDelay(50 - dt);
         }
     }
 }
@@ -274,6 +299,8 @@ void mainMenu() {
     drawImage(logo, 58, 47, 7, 7, 1, 1);
 
     drawBRect(25, 70, 25, 25, 14);
+    drawBRect(35, 75, 5, 5, 0);
+    drawBRect(50, 78, 10, 7, 41);
 
     drawBRect(120, 42, 50, 25, 48);
     drawBRect(130, 0, 30, 42, 48);
