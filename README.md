@@ -17,8 +17,7 @@ Other controls are always as instrucions on the screen
 ## Screenshots
 
 ![App Screenshot](screenshot.png)
-
-
+![App Screenshot](screenshot2.png)
 ## Contributing
 
 Contributions are always welcome!
@@ -27,8 +26,6 @@ Feel free to contribute.
 ## Demo
 
 Gif: 
-
-![Vid](Vid.gif)
 
 
 Itch.io:
